@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshitha Parking Lot Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">P</div>
+    <div><h1>Harshitha Parking</h1><p>Parking Lot Management System</p></div>
+    <span id="connection" class="connection">Checking database...</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div><p class="eyebrow">MANAGEMENT DASHBOARD</p><h2>Welcome to your parking dashboard</h2>
+      <p>Manage users, parking slots, vehicles and parking records in one place.</p></div>
+      <div class="welcome-icon">🚗</div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card"><span>Total Users</span><strong id="usersCount">0</strong><small>Registered users</small></article>
+      <article class="stat-card"><span>Parking Slots</span><strong id="slotsCount">0</strong><small>Available records</small></article>
+      <article class="stat-card"><span>Vehicles</span><strong id="vehiclesCount">0</strong><small>Registered vehicles</small></article>
+      <article class="stat-card"><span>Parking Records</span><strong id="recordsCount">0</strong><small>Total entries</small></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><p class="eyebrow">DATA MANAGEMENT</p><h2>Manage records</h2></div>
+        <button id="refreshBtn" class="secondary-btn">↻ Refresh</button></div>
+      <nav class="tabs" aria-label="Database tables">
+        <button class="tab active" data-table="users">Users</button>
+        <button class="tab" data-table="parking_slots">Parking Slots</button>
+        <button class="tab" data-table="vehicles">Vehicles</button>
+        <button class="tab" data-table="parking_records">Parking Records</button>
+      </nav>
+      <div class="toolbar"><div><h3 id="tableTitle">Users</h3><p id="tableDescription">Add and manage registered users.</p></div>
+        <button id="addBtn" class="primary-btn">＋ Add New</button></div>
+      <div class="table-wrap"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
+      <p id="message" class="message" role="status"></p>
+    </section>
+
+    <footer>© 2026 Harshitha Parking Lot Management</footer>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-heading"><div><p class="eyebrow">RECORD DETAILS</p><h2 id="formTitle">Add record</h2></div>
+        <button id="closeModal" class="close-btn" aria-label="Close">×</button></div>
+      <form id="recordForm"><div id="formFields" class="form-grid"></div>
+        <div class="form-actions"><button type="button" id="cancelBtn" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Save Record</button></div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
